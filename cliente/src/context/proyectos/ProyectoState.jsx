@@ -2,7 +2,7 @@ import React,{useReducer} from 'react';
 
 import ProyectoContext from './ProyectoContext'
 import ProyectoReducer from './ProyectoReducer'
-
+import {FORMULARIO_PROYECTO} from '../../types'
 const ProyectoState = props =>{
     const initialState ={
         formulario :false
@@ -10,11 +10,20 @@ const ProyectoState = props =>{
     //dispatch para ejecutar las acciones
  const [state, dispatch] = useReducer(ProyectoReducer,initialState)
 
- //serie de funcione spara CRUD
+ //serie de funciones spara CRUD
+
+    const mostrarFormulario = () =>{
+        dispatch({
+            type:FORMULARIO_PROYECTO
+        })
+    }
+
+
  return(
      <ProyectoContext.Provider
      value={{
-         formulario:state.formulario
+         formulario:state.formulario,
+         mostrarFormulario
      }}
      >
          {props.children}
