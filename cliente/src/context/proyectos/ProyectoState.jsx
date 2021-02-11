@@ -1,6 +1,6 @@
 import React,{useReducer} from 'react';
 
-import proyectoContext from './proyectoContext'
+import ProyectoContext from './ProyectoContext'
 import ProyectoReducer from './ProyectoReducer'
 
 const ProyectoState = props =>{
@@ -12,13 +12,13 @@ const ProyectoState = props =>{
 
  //serie de funcione spara CRUD
  return(
-     <proyectoContext.Provider
+     <ProyectoContext.Provider
      value={{
-         formulario:state.nuevoProyecto
+         formulario:state.formulario
      }}
      >
          {props.children}
-     </proyectoContext.Provider>
+     </ProyectoContext.Provider>
  )
 }
 
